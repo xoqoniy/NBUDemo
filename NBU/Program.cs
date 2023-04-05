@@ -1,5 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using NBU.Data.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<NBUContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NBUDb") ?? throw new InvalidOperationException("NBUDb can't be found")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

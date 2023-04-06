@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace NBU.Service.Helpers
 {
-	public class Response
+	public class Response<TResult>
 	{
+		//Header
+		public int StatusCode { get; set; }
+		public string Message { get; set; }
 
+		//Body
+		public TResult Value { get; set; }
 	}
 }

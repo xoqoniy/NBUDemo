@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NBU.Domain.Commons;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace NBU.Domain.Entities
 {
-	public class User
+	public class User : Auditable
 	{
-		public int Id { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		[EmailAddress, Required]

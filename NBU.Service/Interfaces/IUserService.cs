@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NBU.Domain.Entities;
+using NBU.Service.Helpers;
+using NBU.Service.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +9,12 @@ using System.Threading.Tasks;
 
 namespace NBU.Service.Interfaces
 {
-	public class IUserService
+	public interface IUserService
 	{
-
+		public ValueTask<Response<User>> CreateUserAsync(UserCreationView user);
+		public ValueTask<Response<User>> UpdateUserAsync(int id, User user);
+		public ValueTask<Response<bool>> DeleteUser(int id);
+		public ValueTask<Response<User>> GetbyId { get; set; }
+		public List<Response<User>> GetAllUsers();
 	}
 }

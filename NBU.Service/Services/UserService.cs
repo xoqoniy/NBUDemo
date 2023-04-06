@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace NBU.Service.Services
 {
-	internal class UserService
+	public class UserService
 	{
+
 	}
 }

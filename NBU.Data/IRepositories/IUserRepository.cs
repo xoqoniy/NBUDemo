@@ -10,9 +10,9 @@ namespace NBU.Data.IRepositories
 	public interface IUserRepository
 	{
 		public ValueTask<User>InsertUserAsync(User user);
-		public ValueTask<User>UpdateUserAsync(int id, User user);
-		public ValueTask<bool> DeleteUserAsync(int id);
-		public ValueTask<User> GetUserByIdAsync(int id);
+		public ValueTask<User>UpdateUserAsync(User user);
+		public ValueTask<bool> DeleteUserAsync(Predicate<User>predicate);
+		public ValueTask<User> GetUserByIdAsync(Predicate<User> predicate);
 		public IQueryable<User> GetAllUsers();
 	}
 }

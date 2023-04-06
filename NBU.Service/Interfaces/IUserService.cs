@@ -12,9 +12,9 @@ namespace NBU.Service.Interfaces
 	public interface IUserService
 	{
 		public ValueTask<Response<User>> CreateUserAsync(UserCreationView user);
-		public ValueTask<Response<User>> UpdateUserAsync(int id, User user);
-		public ValueTask<Response<bool>> DeleteUserAsync(int id);
-		public ValueTask<Response<User>> GetbyIdAsync(int id);
-		public Response<List<User>> GetAllUsers();
+		public ValueTask<Response<User>> UpdateUserAsync(Predicate<User> predicate, User user);
+		public ValueTask<Response<bool>> DeleteUserAsync(Predicate<User> predicate);
+		public ValueTask<Response<User>> GetbyIdAsync(Predicate<User> predicate);
+		public Response<List<User>> GetAllUsers(Predicate<User> predicate = null);
 	}
 }

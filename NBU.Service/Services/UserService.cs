@@ -1,4 +1,5 @@
-﻿using NBU.Domain.Entities;
+﻿using NBU.Data.Repositories;
+using NBU.Domain.Entities;
 using NBU.Service.Helpers;
 using NBU.Service.Interfaces;
 using NBU.Service.Views;
@@ -12,30 +13,14 @@ namespace NBU.Service.Services
 {
 	public class UserService : IUserService
 	{
-		//USerService
-		public ValueTask<Response<User>> CreateUserAsync(UserCreationView user)
+
+		private readonly UserRepository userRepository;
+
+		public UserService(UserRepository userRepository)
 		{
-			throw new NotImplementedException();
+			this.userRepository = userRepository;
 		}
 
-		public ValueTask<Response<bool>> DeleteUserAsync(int id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Response<List<User>> GetAllUsers()
-		{
-			throw new NotImplementedException();
-		}
-
-		public ValueTask<Response<User>> GetbyIdAsync(int id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public ValueTask<Response<User>> UpdateUserAsync(int id, User user)
-		{
-			throw new NotImplementedException();
-		}
+		
 	}
 }

@@ -6,6 +6,7 @@ using NBU.Service.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -81,7 +82,22 @@ namespace NBU.Service.Services
 
 		public Response<List<User>> GetAllUsers(Predicate<User> predicate = null)
 		{
-			throw new NotImplementedException();
+			var users = this.userRepository.GetAllUsers();
+			if (users.Any())
+			{
+				return new Response<List<User>>
+				{
+					StatusCode = 200,
+					Message = "Success",
+					Value = users.ToList()
+				};
+			}
+			return new Response<List<User>>
+			{
+				StatusCode = 404,
+				Message = "No date can be found",
+				Value = null
+			};
 		}
 
 		public async ValueTask<Response<User>> GetbyIdAsync(Predicate<User> predicate)

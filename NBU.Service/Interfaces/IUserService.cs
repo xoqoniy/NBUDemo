@@ -13,8 +13,8 @@ namespace NBU.Service.Interfaces
 	{
 		public ValueTask<Response<User>> CreateUserAsync(UserCreationView user);
 		public ValueTask<Response<User>> UpdateUserAsync(int id, User user);
-		public ValueTask<Response<bool>> DeleteUser(int id);
-		public ValueTask<Response<User>> GetbyId { get; set; }
-		public List<Response<User>> GetAllUsers();
+		public ValueTask<Response<bool>> DeleteUserAsync(int id);
+		public ValueTask<Response<User>> GetbyIdAsync(int id);
+		public Response<List<User>> GetAllUsers();
 	}
 }

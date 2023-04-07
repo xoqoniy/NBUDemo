@@ -1,15 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using NBU.Data.Configurations;
+using NBU.Data.IRepositories;
+using NBU.Data.Repositories;
 using NBU.Models;
+using NBU.Service.Interfaces;
+using NBU.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<NBUContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("NBUDb") ?? throw new InvalidOperationException("NBUDb can't be found")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NBUDb") ?? throw new InvalidOperationException("NBUDb can't be found"), b => b.MigrationsAssembly("Bank.Mvc")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
 
 

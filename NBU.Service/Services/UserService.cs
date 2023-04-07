@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace NBU.Service.Services
 {
+		
 	public class UserService : IUserService
 	{
 

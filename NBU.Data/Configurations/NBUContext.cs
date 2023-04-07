@@ -19,10 +19,10 @@ namespace NBU.Data.Configurations
 		{
 		}
 
-		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		//{
-		//	optionsBuilder.UseSqlServer(connection); // b => b.MigrationsAssembly("NBU")
-		//}
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			optionsBuilder.UseSqlServer(connection); // b => b.MigrationsAssembly("NBU")
+		}
 		public DbSet<User> Users { get; set; }
 	}
 }

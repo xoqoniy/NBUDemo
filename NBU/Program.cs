@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NBU.Data.Configurations;
+using NBU.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,9 @@ builder.Services.AddDbContext<NBUContext>(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

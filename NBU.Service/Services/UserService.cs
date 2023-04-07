@@ -21,6 +21,29 @@ namespace NBU.Service.Services
 			this.userRepository = userRepository;
 		}
 
-		
+		public ValueTask<Response<User>> CreateUserAsync(UserCreationView user)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ValueTask<Response<bool>> DeleteUserAsync(Predicate<User> predicate)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Response<List<User>> GetAllUsers(Predicate<User> predicate = null)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ValueTask<Response<User>> GetbyIdAsync(Predicate<User> predicate)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ValueTask<Response<User>> UpdateUserAsync(Predicate<User> predicate, User user)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

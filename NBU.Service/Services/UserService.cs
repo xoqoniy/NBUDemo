@@ -1,4 +1,5 @@
-﻿using NBU.Data.Repositories;
+﻿using NBU.Data.IRepositories;
+using NBU.Data.Repositories;
 using NBU.Domain.Entities;
 using NBU.Service.Helpers;
 using NBU.Service.Interfaces;
@@ -16,9 +17,9 @@ namespace NBU.Service.Services
 	public class UserService : IUserService
 	{
 
-		private readonly UserRepository userRepository;
+		private readonly IUserRepository userRepository;
 
-		public UserService(UserRepository userRepository)
+		public UserService(IUserRepository userRepository)
 		{
 			this.userRepository = userRepository;
 		}
@@ -124,9 +125,9 @@ namespace NBU.Service.Services
 
 		}
 
-		public async ValueTask<Response<User>> UpdateUserAsync(Predicate<User> predicate, User user)
+		public async ValueTask<Response<User>> UpdateUserAsync(User user)
 		{
-			User person = await this.userRepository.GetUserByIdAsync(user => predicate(user));
+			User person = await this.userRepository.GetUserByIdAsync(t => t.Email == user.Email);
 			if (person is null)
 			{
 				return new Response<User>

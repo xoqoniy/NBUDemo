@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NBU.Data;
 using NBU.Data.Configurations;
 using NBU.Data.IRepositories;
 using NBU.Data.Repositories;
@@ -16,7 +17,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 var app = builder.Build();
-
+SeedInfo.Initialize(app);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

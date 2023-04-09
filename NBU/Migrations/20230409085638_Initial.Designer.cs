@@ -12,8 +12,8 @@ using NBU.Data.Configurations;
 namespace NBU.Migrations
 {
     [DbContext(typeof(NBUContext))]
-    [Migration("20230409073324_First")]
-    partial class First
+    [Migration("20230409085638_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,8 +65,7 @@ namespace NBU.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

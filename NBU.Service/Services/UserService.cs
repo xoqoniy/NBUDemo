@@ -82,12 +82,12 @@ namespace NBU.Service.Services
 			};
 
 		}
-		public Response<List<User>> GetAllUsers()
+		public Response<IEnumerable<User>> GetAllUsers()
 		{
 			var users = this.userRepository.GetAllUsers();
 			if (users.Any())
 			{
-				return new Response<List<User>>
+				return new Response<IEnumerable<User>>
 				{
 					StatusCode = 200,
 					Message = "Success",
@@ -95,7 +95,7 @@ namespace NBU.Service.Services
 
 				};
 			}
-			return new Response<List<User>>
+			return new Response<IEnumerable<User>>
 			{
 				StatusCode = 404,
 				Message = "No date can be found",

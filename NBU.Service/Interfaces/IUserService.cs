@@ -15,6 +15,6 @@ namespace NBU.Service.Interfaces
 		public ValueTask<Response<User>> UpdateUserAsync(User user);
 		public ValueTask<Response<bool>> DeleteUserAsync(Predicate<User> predicate);
 		public ValueTask<Response<User>> GetbyIdAsync(Predicate<User> predicate);
-		public Response<List<User>> GetAllUsers(Predicate<User> predicate = null);
+		public Response<List<User>> GetAllUsers();
 	}
 }

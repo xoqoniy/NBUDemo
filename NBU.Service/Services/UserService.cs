@@ -82,7 +82,7 @@ namespace NBU.Service.Services
 			};
 
 		}
-		public Response<List<User>> GetAllUsers(Predicate<User> predicate = null)
+		public Response<List<User>> GetAllUsers()
 		{
 			var users = this.userRepository.GetAllUsers();
 			if (users.Any())

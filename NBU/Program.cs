@@ -9,7 +9,7 @@ using NBU.Service.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<NBUContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("NBUDb") ?? throw new InvalidOperationException("NBUDb can't be found"), b => b.MigrationsAssembly("Bank.Mvc")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("NBUDb") ?? throw new InvalidOperationException("NBUDb can't be found"), b => b.MigrationsAssembly("NBU")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

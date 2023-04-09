@@ -1,6 +1,7 @@
 ﻿using NBU.Domain.Commons;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace NBU.Domain.Entities
 {
 	public class User : Auditable
 	{
+		[DisplayName("Profile Picture URL")]
+		public string Url { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		[EmailAddress, Required]

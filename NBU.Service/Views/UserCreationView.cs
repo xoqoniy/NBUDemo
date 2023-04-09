@@ -23,7 +23,7 @@ namespace NBU.Service.Views
 		[Phone]
 		[DisplayName("Phone Number")]
 		public string PhoneNumber { get; set; }
-		[MinLength(3), MaxLength(15)]
+		
 		[DisplayName("Username")]
 		public string UserName { get; set; }
 

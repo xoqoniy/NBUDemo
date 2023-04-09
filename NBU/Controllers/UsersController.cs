@@ -18,7 +18,7 @@ namespace NBU.Controllers
 		public IActionResult Index()
 		{
 			var users = userService.GetAllUsers();
-			return View();
+			return View(users);
 		}
 		public async Task<IActionResult> Edit([Bind("FirstName, LastName, Email, PhoneNumber, Password, UserName")]User user)
 		{
